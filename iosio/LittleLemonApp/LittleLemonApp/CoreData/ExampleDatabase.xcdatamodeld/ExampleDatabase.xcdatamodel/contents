@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Dish" representedClassName="Dish" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="descriptionDish" optional="YES" attributeType="String"/>
+        <attribute name="imageData" optional="YES" attributeType="Transformable"/>
+        <attribute name="price" optional="YES" attributeType="Decimal 64"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="restaurant" optional="YES" toMany="NO" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="dishes"/>
+    </entity>
+    <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="dishes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dish" inverseName="restaurant"/>
+    </entity>
+</model>
